@@ -3,7 +3,7 @@ import logging
 from collections import defaultdict
 
 from django import forms
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from sentry.plugins.bases import notify
 from sentry.http import safe_urlopen
@@ -40,21 +40,21 @@ class TelegramNotificationsOptionsForm(notify.NotificationConfigurationForm):
 
 class TelegramNotificationsPlugin(CorePluginMixin, notify.NotificationPlugin):
     title = 'Telegram Notifications Python3'
-    slug = 'sentry_telegram_py3'
+    slug = 'sentry_telegram_python'
     description = package_doc
     version = __version__
-    author = 'Vladislav Bukhman'
-    author_url = 'https://github.com/vortland/sentry-telegram'
+    author = 'Yaroslav Romashenko'
+    author_url = 'https://github.com/1Anchor/sentry-telegram'
     resource_links = [
-        ('Source', 'https://github.com/vortland/sentry-telegram'),
+        ('Source', 'https://github.com/1Anchor/sentry-telegram'),
     ]
 
-    conf_key = 'sentry_telegram_py3'
+    conf_key = 'sentry_telegram_python'
     conf_title = title
 
     project_conf_form = TelegramNotificationsOptionsForm
 
-    logger = logging.getLogger('sentry.plugins.sentry_telegram_py3')
+    logger = logging.getLogger('sentry.plugins.sentry_telegram_python')
 
     def is_configured(self, project, **kwargs):
         return bool(self.get_option('api_token', project) and self.get_option('receivers', project))
@@ -114,7 +114,7 @@ class TelegramNotificationsPlugin(CorePluginMixin, notify.NotificationPlugin):
 
         template = self.get_message_template(group.project)
 
-        text = template.format(**names)
+        text = f"{template['text']} {names}"
 
         return {
             'text': text,

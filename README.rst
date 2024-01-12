@@ -11,8 +11,8 @@ Presented plugin tested with Sentry 22.12.0.
 How will it look like
 ---------------------
 
-.. image:: https://raw.githubusercontent.com/vortland/sentry-telegram/master/docs/images/telegram-window.png
-   :target: https://github.com/vortland/sentry-telegram/blob/master/docs/images/telegram-window.png
+.. image:: https://raw.githubusercontent.com/1Anchor/sentry-telegram/master/docs/images/telegram-window.png
+   :target: https://github.com/1Anchor/sentry-telegram/blob/master/docs/images/telegram-window.png
    :alt: How will it look like
 
 Installation
@@ -22,7 +22,7 @@ Installation
 
 .. code-block:: bash
 
-    pip install sentry-telegram-py3
+    pip install sentry-telegram-python
 
 2. Restart your Sentry instance.
 3. Go to your Sentry web interface. Open ``Settings`` page of one of your projects.
@@ -33,12 +33,12 @@ Installation
 
 6. Done!
 
-.. |travis| image:: https://app.travis-ci.com/vortland/sentry-telegram.svg?branch=master
-   :target: https://app.travis-ci.com/vortland/sentry-telegram
+.. |travis| image:: https://app.travis-ci.com/1Anchor/sentry-telegram.svg?branch=master
+   :target: https://app.travis-ci.com/1Anchor/sentry-telegram
    :alt: Build Status
 
-.. |codecov| image:: https://codecov.io/gh/vortland/sentry-telegram/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/vortland/sentry-telegram?branch=master
+.. |codecov| image:: https://codecov.io/gh/1Anchor/sentry-telegram/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/1Anchor/sentry-telegram?branch=master
    :alt: Coverage Status
 
 .. |pypi| image:: https://badge.fury.io/py/sentry-telegram-py3.svg
