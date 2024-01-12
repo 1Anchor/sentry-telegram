@@ -114,7 +114,7 @@ class TelegramNotificationsPlugin(CorePluginMixin, notify.NotificationPlugin):
 
         template = self.get_message_template(group.project)
 
-        text = f"{template['text']} {names}"
+        text = template.format(**names)
 
         return {
             'text': text,
